@@ -1,0 +1,21 @@
+public class Solution 
+{
+    public int FindClosestNumber(int[] nums) 
+    {
+        int result = Int32.MaxValue;
+
+        foreach (var item in nums)
+        {
+            if (Math.Abs(item) < Math.Abs(result))
+            {
+                result = item;
+            }
+            else if (Math.Abs(item) == Math.Abs(result) && item > result)
+            {
+                result = item;
+            }
+        }
+
+        return result;
+    }
+}
